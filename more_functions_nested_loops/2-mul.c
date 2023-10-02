@@ -5,7 +5,7 @@
  *
  * @a: First integer to be multiplied.
  *
- * @b: Second integer to be multiplied. 
+ * @b: Second integer to be multiplied.
  *
  * Return: The result of the multiplication.
  */
