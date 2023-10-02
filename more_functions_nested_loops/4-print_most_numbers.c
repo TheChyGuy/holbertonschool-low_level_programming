@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_most_numbers - prints almost all numbers from the selected set of numbers.
+ * print_most_numbers - prints almost all numbers from 0-9, but not 2 and 4.
  */
 
 void print_most_numbers(void)
