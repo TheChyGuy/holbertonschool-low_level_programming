@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * puts2 = starting point.
@@ -17,4 +18,4 @@ void puts2(char *str)
 		i = i + 1;
 	}
 	putchar('\n');
-}	
+}
