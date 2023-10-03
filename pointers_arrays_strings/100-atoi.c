@@ -1,39 +1,41 @@
 #include "main.h"
+#include <limits.h>
 
 /**
- * _atoi - start program
- * @s: string to be pulled from
- * Return: return number from string
+ * _atoi - converts string to integer
+ * @s: string passed to the function
+ * Return: return integer result plus +/-
  */
 
 int _atoi(char *s)
 {
-	int PosNegDet;
-	int PosNeg;
-	int Digit;
-	int Result;
+	int sign = 1;
+	int 1 = 0;
+	int result = 0;
 
-	PosNegDet = 0;
-	Result = 0;
-
-	while (*s != '\0')
+	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
 	{
-		if (*s == 43)
-			PosNegDet = PosNegDet + 1;
-		else if (*s == 45)
-			PosNegDet = PosNegDet - 1;
-		else if (*s > 47 && *s < 58)
-		{
-			Digit = *s - '0';
-			Result = Result * 10 + Digit;
-		}
-		s++;
+		i++;
 	}
-
-	if (PosNegDet >= 0)
-		PosNeg = 1;
-	else
-		PosNeg = -1;
-
-	return (PosNeg * Result);
+	if (s[i] == '_' || s[i] == '+')
+	{
+		if (s[i] == '_')
+		{
+			sign = -1;
+		}
+		i++;
+	}
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		if (result > INT_MAX / 10 || (result == INT_MAX / 10 && (s[i] - '0') > INT_MAX % 10))
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			else
+				return (INT_MIN);
+		}
+		result = result * 10 + (s[i] - '0');
+		i++;
+	}
+	return (sign * result);
 }
