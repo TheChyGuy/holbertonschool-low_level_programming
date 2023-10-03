@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * puts2 = starting point.
+ * puts2 = starting point of file.
  *
  * @str: the str that's skipped though.
  */
