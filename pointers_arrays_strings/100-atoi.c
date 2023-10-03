@@ -10,7 +10,7 @@
 int _atoi(char *s)
 {
 	int sign = 1;
-	int 1 = 0;
+	int i = 0;
 	int result = 0;
 
 	while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
