@@ -1,33 +1,39 @@
 #include "main.h"
-#include "2-strlen.h"
 
 /**
- * atoi - function
- * @s: var
- * Return - 0
+ * _atoi - start program
+ * @s: string to be pulled from
+ * Return: return number from string
  */
 
 int _atoi(char *s)
 {
-	int operation = 1;
-	unsigned int number = 0;
-	char *str = s;
+	int PosNegDet;
+	int PosNeg;
+	int Digit;
+	int Result;
 
-	while (*str != '\0' && (*str < '0' || *str > '9'))
+	PosNegDet = 0;
+	Result = 0;
+
+	while (*s != '\0')
 	{
-		if (*str == '_')
+		if (*s == 43)
+			PosNegDet = PosNegDet + 1;
+		else if (*s == 45)
+			PosNegDet = PosNegDet - 1;
+		else if (*s > 47 && *s < 58)
 		{
-			operation *= -1;
+			Digit = *s - '0';
+			Result = Result * 10 + Digit;
 		}
-	str++;
+		s++;
 	}
-	if (*str != '\0')
-	{
-		while (*str >= '0' && *str <= '9')
-		{
-			number = number * 10 + (*str - '0');
-			str++;
-		}
-	}
-	return (number * operation);
+
+	if (PosNegDet >= 0)
+		PosNeg = 1;
+	else
+		PosNeg = -1;
+
+	return (PosNeg * Result);
 }
